@@ -1,0 +1,115 @@
+/* The side navigation menu */
+.sidebar {
+    margin: 0;
+    padding: -3;
+    width: 200px;
+    background-color: #001f3f;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+/* Sidebar links */
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+    font-family: Roboto;
+}
+
+/* Active/current link */
+.sidebar a.active {
+    background-color: whitesmoke;
+    font-family: Roboto;
+    color: black;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+    .sidebar a {
+        text-align: center;
+        float: none;
+    }
+}
+
+body{
+    overflow: hidden;
+    scroll: no;
+    height: 100px;
+    font-family: Roboto;
+    background-color: lightgray;
+}
+
+.header {
+    padding: 10px 10px;
+    background: #001f3f;
+    color: #f1f1f1;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url('/fonts/Roboto-Regular.ttf');
+}
+
+h1 {
+    text-align: center;
+    margin-top: 100;
+    color: black;
+    font-family: "Roboto Thin";
+}
+
+.center {
+    margin: 30px auto auto;
+    width: 30%;
+    padding: 10px;
+}
+
+.block {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: green;
+    padding: 14px;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+
+.blockText {
+    width: 100%;
+    height: 300%;
+    margin: 3px -1px 20px;
+    padding: 0;
+    resize: none;
+
+}
+
+h2{
+    font-family: "Roboto Thin";
+}
+
