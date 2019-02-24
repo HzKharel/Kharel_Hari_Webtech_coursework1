@@ -1,74 +1,58 @@
+// crypt("", "pizza", false);
+crypt("hello world. this is god.", "pizza", false);
+crypt("wmkko lwqkd. iphr ih onc.", "pizza", true);
 
-var alphabet = "abcdefghijklmnopqrstuvwxyz".split('');
-var enctext = encode();
-decode(enctext);
+function crypt(input, key,decrypt){
+    var output = "";
 
-function encode()
-{
-    var key = "helloworld";
-    var plainText = "abvcfghdsq";
-    plainText = plainText.toLowerCase();
-    key = key.toLowerCase();
-    console.log(plainText);
-    var crypted = [];
-    var key_idx = 0;
+    for(var idx = 0, key_idx = 0; idx < input.length; idx++){
 
-    for(var i = 0; i < plainText.length; i++)
-    {
-        if(i >= key.length)
-        {
-            key_idx = i%key.length;
+        var char_code = input.charCodeAt(idx);
+        var letter = String.fromCharCode(char_code);
+
+        //check if the character is a letter. No native function to check.
+        //toUpperCase and toLowerCase both evaluate to true if its not a letter.
+        //A simple if statement to check if its an actual letter using above principle.
+        if(letter.toUpperCase() !== letter.toLowerCase()){
+
+            //now handling uppercase letters
+            if(letter === letter.toUpperCase()){
+                var key_char = key[key_idx % key.length];
+                if(decrypt){
+                    output += String.fromCharCode(((char_code - 65) - (key_char.charCodeAt(0) - 64)) % 26 + 65);
+                    console.log(((char_code - 65) - (key_char.charCodeAt(0) - 64)));
+                }
+                else{
+
+                    output += String.fromCharCode(((char_code  - 65) + (key_char.charCodeAt(0) - 65)) % 26 + 65);
+                    console.log(((char_code - 65) + (key_char.charCodeAt(0) - 65)));
+                }
+                key_idx++;
+            }
+            //if its not uppercase, then its lower
+            else{
+                var key_char = key[key_idx % key.length];
+               if(decrypt){
+                   output += String.fromCharCode(((char_code - 97) - (key_char.charCodeAt(0) - 96)) % 26 + 98);
+                   console.log(((char_code - 97) - (key_char.charCodeAt(0) - 97)) % 26 + 97);
+               }
+               else{
+                   output += String.fromCharCode(((char_code - 97) + (key_char.charCodeAt(0) - 97)) % 26 + 97);
+                   console.log(((char_code - 97) + (key_char.charCodeAt(0) - 97)) % 26 + 97);
+               }
+                key_idx++;
+            }
         }
-        else {
-            key_idx++;
+        //if not a letter, push it back to the output stream
+        else{
+            output += letter;
         }
-
-       var letter_index = ((alphabet.indexOf(plainText[i]) + alphabet.indexOf(key[key_idx]))%26);
-       if(letter_index !== -2){
-           crypted.push(alphabet[letter_index]);
-       }
-       else {
-           crypted.push(' ');
-       }
 
     }
 
-    crypted = crypted.join('');
-    console.log(crypted);
-    return crypted;
-
-
+   console.log(output);
 }
 
-function decode(text) {
-    var key = "helloworld";
-    key = key.toLowerCase();
-    var decrypted = [];
-    var key_current_index = 0;
-    var key_idx = 0;
 
-    for(var i = 0; i < text.length; i++)
-    {
-        if(i >= key.length)
-        {
-            key_idx = i%key.length;
-        }
-        else {
-            key_idx++;
-        }
 
-        var letter = ((alphabet.indexOf(text[i])- alphabet.indexOf(key[key_idx]) + 26) % 26);
 
-        if(letter != 0){
-            decrypted.push(alphabet[letter]);
-        }
-        else {
-            decrypted.push(' ');
-        }
-
-        key_current_index++;
-    }
-
-    decrypted = decrypted.join('');
-    console.log(decrypted);
-}
