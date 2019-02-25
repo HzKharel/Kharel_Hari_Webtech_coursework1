@@ -1,5 +1,5 @@
 function encode(){
-    var plain_text = document.getElementById("encodeField").value.toLowerCase();
+    var plain_text = document.getElementById("encodeField").value;
     var cyper_text = [];
     var alphabet = "abcdefghijklmnopqrstuvwxyz".split('');
 
