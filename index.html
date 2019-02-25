@@ -1,7 +1,11 @@
 <head>
     <title>Hello World</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <script type="text/javascript" src="scripts/EMPencoder.js"></script>
+
+    <script type="text/javascript" src="scripts/Rot13.js"></script>
+    <script type="text/javascript" src="scripts/VignereCipher.js"></script>
+    <script type="text/javascript" src="scripts/main.js"></script>
+
 </head>
 
 <body>
@@ -22,7 +26,7 @@
                     <button class="dropbtn" id="dropdownSelector">Select Encoder</button>
                         <div class="dropdown-content">
                             <a href="#" onclick="document.getElementById('dropdownSelector').innerHTML='ROT 13 Cipher';">ROT 13</a>
-                            <a href="#" onclick="document.getElementById('dropdownSelector').innerHTML='Autokey Cipher';">Autokey Cipher</a>
+                            <a href="#" onclick="document.getElementById('dropdownSelector').innerHTML='Vignere Cipher';">Vignere Cipher</a>
                             <a href="#" onclick="document.getElementById('dropdownSelector').innerHTML='Hello World';">Link 3</a>
                         </div>
                 </div>
@@ -30,9 +34,9 @@
             <div id="InputField">
                     <textarea rows="10" class="blockText" autofocus id="encodeField"></textarea>
                     <br>
-                    <textarea rows="1"class="blockText" style=" height: 24px; margin-bottom: 10px"  autofocus id="encodedMessageKey" placeholder="Cipher Key"></textarea>
-                    <button type="button" style=" margin-top: 10px;" class="block" onclick="encode()" id="encodeButton">Encode</button>
-                    <button type="button" class="block" style=" margin-top: 20px;" onclick="encode()" id="encodeButton">Decode</button>
+                    <textarea rows="1"class="blockText" style=" height: 24px; margin-bottom: 10px"  autofocus id="encodedMessageKey" placeholder="Cipher Key (if applicable)"></textarea>
+                    <button type="button" style=" margin-top: 10px;" class="block" onclick="encode(false)" id="encodeButton">Encode</button>
+                    <button type="button" class="block" style=" margin-top: 20px;" onclick="encode(true)" id="decodeButton">Decode</button>
                     <textarea rows="10" class="blockText" autofocus id="encodedMessage" style="display:none;" readonly></textarea>
         
                 </div>
