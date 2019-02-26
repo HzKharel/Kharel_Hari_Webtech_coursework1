@@ -1,19 +1,24 @@
 function encode(isDecrypt) {
-  var plain_text = document.getElementById("encodeField").value;
-  var key = document.getElementById("encodedMessageKey").value;
-  var cipher = document.getElementById("dropdownSelector").textContent;
-  var output = document.getElementById("encodedMessage");
+    var plain_text = document.getElementById("encodeField").value;
+    var key = document.getElementById("encodedMessageKey").value;
+    var cipher = document.getElementById("dropdownSelector").textContent;
+    var output = document.getElementById("encodedMessage");
 
 
+    switch (cipher) {
+        case "ROT 13 Cipher":
 
-  switch (cipher) {
-      case "ROT 13 Cipher":
-          alert("ROT Function called!");
-          output.value = rot13(plain_text);
-          output.style.display = "block";
-          break;
+            output.value = rot13(plain_text);
+            output.style.display = "block";
+            break;
 
-  }
+        case "Vignere Cipher":
+
+            output.value = vignere_Cipher(plain_text, key, isDecrypt);
+            output.style.display = "block";
+            break;
+
+    }
 }
 
 //////////////////ROT 13//////////////////////
@@ -31,12 +36,12 @@ function rot13(plain_text) {
             var crypt_letter;
 
 
-            if(plain_text[idx] === plain_text[idx].toUpperCase()){
-                crypt_letter = String.fromCharCode(((crypt_letter_code  +13 - 65)%26)+65);
+            if (plain_text[idx] === plain_text[idx].toUpperCase()) {
+                crypt_letter = String.fromCharCode(((crypt_letter_code + 13 - 65) % 26) + 65);
                 output += crypt_letter;
             }
-            else{
-                crypt_letter = String.fromCharCode(((crypt_letter_code + 13 - 97)%26)+97);
+            else {
+                crypt_letter = String.fromCharCode(((crypt_letter_code + 13 - 97) % 26) + 97);
                 output += crypt_letter;
             }
         }
@@ -51,7 +56,6 @@ function rot13(plain_text) {
 //////////////////Vignere Cipher//////////////////////
 //////////////////Vignere Cipher//////////////////////
 //////////////////Vignere Cipher//////////////////////
-
 
 
 function vignere_Cipher(input, key, decrypt) {
@@ -79,7 +83,7 @@ function vignere_Cipher(input, key, decrypt) {
                     output += String.fromCharCode(encrypted_letter_code + 65);
                 } else {
                     encrypted_letter_code = (((crypt_letter_code - 65) + (key_letter_code - 97)) % 26);
-                    console.log((crypt_letter_code-65)+ ", " + (key_letter_code-97));
+                    console.log((crypt_letter_code - 65) + ", " + (key_letter_code - 97));
                     output += String.fromCharCode(encrypted_letter_code + 65);
                 }
                 key_idx++;
