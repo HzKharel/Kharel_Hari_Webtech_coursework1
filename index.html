@@ -1,5 +1,5 @@
 <head>
-    <title>Hello World</title>
+    <title>EMP</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 
     <script type="text/javascript" src="scripts/Rot13.js"></script>
@@ -10,7 +10,7 @@
 
 <body>
     <div class="header" id="myHeader">
-        <h2 align="left">Encoded Messaging Platform </h2>
+        <h2 align="left" style="font-family: 'Roboto-Light'">Encoded Messaging Platform </h2>
     </div>
 
     <div class="sidebar">
@@ -22,24 +22,47 @@
     <!-- ALL CODE GOES HERE -->
     <div class="main" id="wrapper">
 
-            <div class="dropdown">
+        <div class="row">
+            <div class="column">
+
+                <div class="dropdown">
                     <button class="dropbtn" id="dropdownSelector">Select Encoder</button>
-                        <div class="dropdown-content">
-                            <a href="#" onclick="document.getElementById('dropdownSelector').innerHTML='ROT 13 Cipher';">ROT 13</a>
-                            <a href="#" onclick="document.getElementById('dropdownSelector').innerHTML='Vignere Cipher';">Vignere Cipher</a>
-                            <a href="#" onclick="document.getElementById('dropdownSelector').innerHTML='Hello World';">Link 3</a>
-                        </div>
+                    <div class="dropdown-content">
+                        <a href="#" onclick="document.getElementById('dropdownSelector').innerHTML='ROT 13 Cipher';">ROT 13</a>
+                        <a href="#" onclick="document.getElementById('dropdownSelector').innerHTML='Vignere Cipher';">Vignere Cipher</a>
+                        <a href="#" onclick="document.getElementById('dropdownSelector').innerHTML='Hello World';">Link 3</a>
+                    </div>
                 </div>
-       
-            <div id="InputField">
+
+                <div id="InputField">
                     <textarea rows="10" class="blockText" autofocus id="encodeField"></textarea>
                     <br>
                     <textarea rows="1"class="blockText" style=" height: 24px; margin-bottom: 10px"  autofocus id="encodedMessageKey" placeholder="Cipher Key (if applicable)"></textarea>
-                    <button type="button" style=" margin-top: 10px;" class="block" onclick="encode(false)" id="encodeButton">Encode</button>
-                    <button type="button" class="block" style=" margin-top: 20px;" onclick="encode(true)" id="decodeButton">Decode</button>
+
+                    <div class="btn-group">
+                        <button type="button" style=" margin-top: 10px; margin-right: 2%" class="block" onclick="encode(false)" id="encodeButton">Encode</button>
+                        <button type="button" class="block" style=" margin-top: 10px;" onclick="encode(true)" id="decodeButton">Decode</button>
+                    </div>
+
                     <textarea rows="10" class="blockText" autofocus id="encodedMessage" style="display:none;" readonly></textarea>
-        
+
                 </div>
+
+            </div>
+            <div class="column" style="margin-right: 2%; width: 48%">
+
+                <h1 style="margin: 0"> Encoded Messaging Platform</h1>
+                <p>Designed and developed by Hari Kharel. Edinburgh Napier University.</p>
+                <br>
+                <br>
+
+
+
+            </div>
+
+        </div>
+
+
        
     </div>
 
