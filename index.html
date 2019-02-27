@@ -9,39 +9,54 @@
 </head>
 
 <body>
-    <div class="header" id="myHeader">
-        <h2 align="left">Encoded Messaging Platform </h2>
+<div class="header" id="myHeader">
+    <h2 align="left">Encoded Messaging Platform </h2>
+</div>
+
+<div class="sidebar">
+    <a class="active" href="#home">Encoder</a>
+    <a href="#news">Messenger</a>
+    <a href="#contact">Profile</a>
+    <a href="#about">Settings</a>
+</div>
+<!-- ALL CODE GOES HERE -->
+<div class="main" id="wrapper">
+
+    <div class="dropdown">
+        <button class="dropbtn" id="dropdownSelector">Select Encoder</button>
+        <div class="dropdown-content">
+            <a href="#" onclick="document.getElementById('dropdownSelector').innerHTML='ROT 13 Cipher';">ROT 13</a>
+            <a href="#" onclick="document.getElementById('dropdownSelector').innerHTML='Vignere Cipher';">Vignere
+                Cipher</a>
+            <a href="#" onclick="document.getElementById('dropdownSelector').innerHTML='Hello World';">Link 3</a>
+        </div>
     </div>
 
-    <div class="sidebar">
-        <a class="active" href="#home">Encoder</a>
-        <a href="#news">Messenger</a>
-        <a href="#contact">Profile</a>
-        <a href="#about">Settings</a>
-    </div>
-    <!-- ALL CODE GOES HERE -->
-    <div class="main" id="wrapper">
+    <div id="InputField">
+        <textarea rows="10" class="blockText" autofocus id="encodeField"></textarea>
+        <br>
+        <textarea rows="1" class="blockText" style=" height: 24px; margin-bottom: 10px" autofocus id="encodedMessageKey"
+                  placeholder="Cipher Key (if applicable)"></textarea>
 
-            <div class="dropdown">
-                    <button class="dropbtn" id="dropdownSelector">Select Encoder</button>
-                        <div class="dropdown-content">
-                            <a href="#" onclick="document.getElementById('dropdownSelector').innerHTML='ROT 13 Cipher';">ROT 13</a>
-                            <a href="#" onclick="document.getElementById('dropdownSelector').innerHTML='Vignere Cipher';">Vignere Cipher</a>
-                            <a href="#" onclick="document.getElementById('dropdownSelector').innerHTML='Hello World';">Link 3</a>
-                        </div>
-                </div>
-       
-            <div id="InputField">
-                    <textarea rows="10" class="blockText" autofocus id="encodeField"></textarea>
-                    <br>
-                    <textarea rows="1"class="blockText" style=" height: 24px; margin-bottom: 10px"  autofocus id="encodedMessageKey" placeholder="Cipher Key (if applicable)"></textarea>
-                    <button type="button" style=" margin-top: 10px;" class="block" onclick="encode(false)" id="encodeButton">Encode</button>
-                    <button type="button" class="block" style=" margin-top: 20px;" onclick="encode(true)" id="decodeButton">Decode</button>
-                    <textarea rows="10" class="blockText" autofocus id="encodedMessage" style="display:none;" readonly></textarea>
-        
-                </div>
-       
+
+
+        <div class="btn-group" style="width: 500px">
+            <button type="button" style=" margin-top: 10px; margin-right: 10px" class="block" onclick="encode(false)" id="encodeButton">
+                Encode
+            </button>
+
+            <button type="button" class="block" style=" margin-top: 10px;" onclick="encode(true)" id="decodeButton">Decode
+            </button>
+        </div>
+
     </div>
 
-   
+
+    <textarea rows="10" class="blockText" autofocus id="encodedMessage" style="display:none;" readonly></textarea>
+
+</div>
+
+</div>
+
+
 </body>
