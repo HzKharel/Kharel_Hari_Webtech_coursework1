@@ -1,3 +1,4 @@
+
 function autokey(plain_text, key, decrypt) {
 
     var key_stream = key.toLowerCase();
@@ -36,7 +37,7 @@ function autokey(plain_text, key, decrypt) {
                     if (crypt_code < 0) {
                         crypt_code = 26 + crypt_code;
                     }
-                    //  console.log(crypt_code);
+
                     var letter = String.fromCharCode(crypt_code + 65);
                     output += letter;
                     key_stream += letter.toLowerCase();

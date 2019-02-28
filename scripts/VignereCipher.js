@@ -1,5 +1,4 @@
-
-function vignere_Cipher(input, key, decrypt) {
+function vignere(input, key, decrypt) {
     var output = "";
     key = key.toLowerCase();
     for (var idx = 0, key_idx = 0; idx < input.length; idx++) {
@@ -24,7 +23,6 @@ function vignere_Cipher(input, key, decrypt) {
                     output += String.fromCharCode(encrypted_letter_code + 65);
                 } else {
                     encrypted_letter_code = (((crypt_letter_code - 65) + (key_letter_code - 97)) % 26);
-                    console.log((crypt_letter_code-65)+ ", " + (key_letter_code-97));
                     output += String.fromCharCode(encrypted_letter_code + 65);
                 }
                 key_idx++;
@@ -57,8 +55,6 @@ function vignere_Cipher(input, key, decrypt) {
             output += input[idx];
 
         }
-
     }
-
     return output;
 }

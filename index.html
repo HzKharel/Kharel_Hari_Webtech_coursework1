@@ -2,8 +2,11 @@
     <title>EMP</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 
+    <script type="text/javascript" src="scripts/cipher_desc.js"></script>
     <script type="text/javascript" src="scripts/Rot13.js"></script>
+    <script type="text/javascript" src="scripts/Autokey.js"></script>
     <script type="text/javascript" src="scripts/VignereCipher.js"></script>
+    <script type="text/javascript" src="scripts/morsecode.js"></script>
     <script type="text/javascript" src="scripts/main.js"></script>
 
 </head>
@@ -28,9 +31,12 @@
                 <div class="dropdown">
                     <button class="dropbtn" id="dropdownSelector">Select Encoder</button>
                     <div class="dropdown-content">
-                        <a href="#" onclick="document.getElementById('dropdownSelector').innerHTML='ROT 13 Cipher';">ROT 13</a>
-                        <a href="#" onclick="document.getElementById('dropdownSelector').innerHTML='Vignere Cipher';">Vignere Cipher</a>
-                        <a href="#" onclick="document.getElementById('dropdownSelector').innerHTML='Autokey Cipher';">Autokey Cipher</a>
+
+                        <a href="#" onclick="set_cipher('rot13');">ROT 13</a>
+                        <a href="#" onclick="set_cipher('vignere');">Vignere Cipher</a>
+                        <a href="#" onclick="set_cipher('autokey');">Autokey Cipher</a>
+                        <a href="#" onclick="set_cipher('morse');">Morse Code</a>
+
                     </div>
                 </div>
 

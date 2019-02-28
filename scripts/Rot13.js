@@ -1,5 +1,4 @@
 
-
 function rot13(plain_text) {
 
     var output = "";
@@ -11,22 +10,18 @@ function rot13(plain_text) {
             var crypt_letter;
 
 
-            if(plain_text[idx] === plain_text[idx].toUpperCase()){
-                crypt_letter = String.fromCharCode(((crypt_letter_code  +13 - 65)%26)+65);
+            if (plain_text[idx] === plain_text[idx].toUpperCase()) {
+                crypt_letter = String.fromCharCode(((crypt_letter_code + 13 - 65) % 26) + 65);
                 output += crypt_letter;
             }
-            else{
-                crypt_letter = String.fromCharCode(((crypt_letter_code + 13 - 97)%26)+97);
+            else {
+                crypt_letter = String.fromCharCode(((crypt_letter_code + 13 - 97) % 26) + 97);
                 output += crypt_letter;
             }
         }
         else {
             output += plain_text[idx];
         }
-
     }
-
     return output;
-
-
 }
