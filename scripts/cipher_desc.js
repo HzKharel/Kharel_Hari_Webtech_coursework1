@@ -3,7 +3,6 @@ function set_cipher(passed_cipher) {
     var cipher = document.getElementById("dropdownSelector");
 
 
-    console.log(passed_cipher);
     switch(passed_cipher){
 
         case 'rot13':
