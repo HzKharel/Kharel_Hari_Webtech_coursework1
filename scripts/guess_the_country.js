@@ -27,7 +27,6 @@ function random_country() {
 
 function  random_country_encrypted(country) {
     var random_cipher = Math.floor(Math.random() * (+3 - +0) + +0);
-    console.log(random_cipher);
     var encrypted_country = "";
     switch (random_cipher){
         case 0:
