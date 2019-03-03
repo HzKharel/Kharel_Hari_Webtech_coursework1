@@ -1,10 +1,12 @@
-
+//Autokey Cipher
 function autokey(plain_text, key, decrypt) {
 
+    //initial variables
     var key_stream = key.toLowerCase();
     var plain_text_stream = "";
     var output = "";
 
+    //checking if the text needs to be encrypted or decrypted
     if (!decrypt) {
         //removing punctuation and spaces from plain text to build a key stream
         for (var i = 0; i < plain_text.length; i++) {
@@ -19,18 +21,20 @@ function autokey(plain_text, key, decrypt) {
         }
     }
 
-
     var key_stream_index = 0;
-    //now encrypting the message
+    //encrypting the message
     for (var i = 0; i < plain_text.length; i++) {
 
+        //checking if letter
         if (plain_text[i].toUpperCase() !== plain_text[i].toLowerCase()) {
 
             var plain_text_code = plain_text[i].charCodeAt(0);
             var key_code = (key_stream[key_stream_index].charCodeAt(0));
 
+            //if the letter is uppercase
             if (plain_text[i].toUpperCase() === plain_text[i]) {
 
+                //decryption algorithm
                 if (decrypt) {
                     var crypt_code = ((plain_text_code - 65) - (key_code - 97)) % 26;
 
@@ -43,13 +47,17 @@ function autokey(plain_text, key, decrypt) {
                     key_stream += letter.toLowerCase();
                 }
 
+                //encryption algorithm
                 else {
                     var crypt_code = ((plain_text_code - 65) + (key_code - 97)) % 26;
                     output += String.fromCharCode(crypt_code + 65);
                 }
             }
+
+            //if the letter is lowercase
             else {
 
+                //decryption algorithm
                 if (decrypt) {
                     var crypt_code = ((plain_text_code - 97) - (key_code - 97)) % 26;
 
@@ -62,6 +70,7 @@ function autokey(plain_text, key, decrypt) {
                     key_stream += letter.toLowerCase();
                 }
 
+                //encryption algorithm
                 else {
                     var crypt_code = ((plain_text_code - 97) + (key_code - 97)) % 26;
                     output += String.fromCharCode(crypt_code + 97);

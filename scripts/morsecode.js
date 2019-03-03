@@ -1,6 +1,7 @@
-
+//morse code implementation
 function morsecode(plain_text, decrypt) {
 
+    //mapping alphabet to morse code
     var alphabet = {
         '.-': 'a',
         '-...': 'b',
@@ -42,10 +43,13 @@ function morsecode(plain_text, decrypt) {
     plain_text = plain_text.toLowerCase();
     var message = [];
 
+    //checking if its decryption or encryption
     if (decrypt) {
 
+        //split the morse code by spaces
         var morse_codes = plain_text.split(" ");
 
+        //replace the morse code with a letter from the array
         for(var code in morse_codes){
 
             letter =  alphabet[morse_codes[code]];
@@ -58,9 +62,11 @@ function morsecode(plain_text, decrypt) {
     }
     else{
 
+        //getting every letter in the plain text
         for (var i = 0; i < plain_text.length; i++) {
             var letter = plain_text[i].toLowerCase();
 
+            //replacing the letter with a morse letter
             if (letter.toLowerCase() !== letter.toUpperCase()) {
                 for (var key in alphabet) {
                     if (alphabet[key] === letter) {
@@ -70,7 +76,7 @@ function morsecode(plain_text, decrypt) {
                 }
             }
             else if (letter = " ") {
-                message.push(letter);
+                message.push("  ");
             }
         }
 
