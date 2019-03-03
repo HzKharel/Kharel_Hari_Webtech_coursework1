@@ -22,6 +22,7 @@ country_list = ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Angui
  actual_guesses = 5;
  hidden = [];
 
+
  //picking a random country from the array
 function random_country() {
     var country = country_list[Math.floor(Math.random()*country_list.length)];
@@ -58,7 +59,7 @@ function new_game(){
     country = random_country().toLowerCase();
     for(var i = 0; i < country.length; i++){
         if (country[i].toUpperCase() !== country[i].toLowerCase()) {
-            hidden.push('X');
+            hidden.push('_');
         }
         else{
             hidden.push(" ");
@@ -66,18 +67,19 @@ function new_game(){
     }
 
     //updating the webpage's DOM
-    document.getElementById("encoded_country").innerHTML = random_country_encrypted(country);
-    document.getElementById("country_decrypted").innerHTML = hidden.join("");
+    document.getElementById("encoded_country").innerHTML = "Encoded Country: " + random_country_encrypted(country);
+    document.getElementById("country_decrypted").innerHTML = "Decrypted Letters: " + hidden.join("");
      document.getElementById("game_area").style.display = "block";
     document.getElementById("after_game").style.display = "none";
     document.getElementById("remaining_guesses").innerHTML = ("Remaning Gusses: "+ actual_guesses);
+
 }
 
 //called when the user guesses a letter
 function user_letter_guess(user_letter) {
     var correct_guess = false;
     user_letter = user_letter.toString().toLowerCase();
-    if(user_letter.length > 1){
+    if(user_letter.length !== 1){
         alert("Please Enter Only 1 Letter.");
     }
 
@@ -86,10 +88,11 @@ function user_letter_guess(user_letter) {
         for(var i = 0; i < country.length; i++){
 
             if(country[i] === user_letter){
-                hidden[i] = user_letter;
-                correct_guess = true;
-                document.getElementById("country_decrypted").innerHTML = hidden.join("");
-                document.getElementById('guess_correct').innerHTML = "Well Done. Correct Guess!";
+
+                    hidden[i] = user_letter;
+                    correct_guess = true;
+                    document.getElementById("country_decrypted").innerHTML = "Decrypted Letters: " + hidden.join("");
+                    document.getElementById('guess_correct').innerHTML = "Well Done. Correct Guess!";
 
             }
         }
@@ -103,6 +106,7 @@ function user_letter_guess(user_letter) {
                 document.getElementById("game_area").style.display = "none";
                 document.getElementById("after_game").style.display = "block";
                 document.getElementById("win_cond").innerHTML = "You Lost! Better Luck next time!";
+                document.getElementById("cont").innerHTML = "The Country Was: "+ country;
             }
             document.getElementById('guess_correct').innerHTML = "Oh No! Wrong Guess!";
 
@@ -112,10 +116,21 @@ function user_letter_guess(user_letter) {
             document.getElementById("game_area").style.display = "none";
             document.getElementById("after_game").style.display = "block";
             document.getElementById("win_cond").innerHTML = "Congratulations! You won the Game. Why Not Play Again?";
+            document.getElementById("cont").innerHTML = "The Country Was: "+ country;
         }
 
         document.getElementById("remaining_guesses").innerHTML = ("Remaning Gusses: "+ actual_guesses);
     }
 
     document.getElementById('user_letter').value = "";
+}
+
+window.onload = function () {
+
+    document.getElementById("user_letter").addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            document.getElementById("submit_btn").click();
+        }
+    });
+
 }

@@ -111,6 +111,7 @@ h1 {
     font-size: 16px;
     cursor: pointer;
     color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 
 }
 
@@ -130,6 +131,7 @@ h1 {
     padding: 0;
     resize: none;
     margin-top: 10px;
+
 
 
 }
