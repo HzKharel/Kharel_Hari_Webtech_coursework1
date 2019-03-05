@@ -28,17 +28,30 @@
         <div class="row">
             <div class="column">
 
-                <div class="dropdown">
-                    <button class="dropbtn" id="dropdownSelector">Select Encoder</button>
-                    <div class="dropdown-content">
 
-                        <a href="#" onclick="set_cipher('rot13');">ROT 13</a>
-                        <a href="#" onclick="set_cipher('vignere');">Vignere Cipher</a>
-                        <a href="#" onclick="set_cipher('autokey');">Autokey Cipher</a>
-                        <a href="#" onclick="set_cipher('morse');">Morse Code</a>
-                        <a href="#" onclick="set_cipher('binary');">Binary</a>
 
+                <div class="row">
+                    <div class="column" style="width: 90%">
+                        <div class="dropdown">
+                            <button class="dropbtn" id="dropdownSelector">Select Encoder</button>
+                            <div class="dropdown-content">
+
+                                <a href="#" onclick="set_cipher('rot13');">ROT 13</a>
+                                <a href="#" onclick="set_cipher('vignere');">Vignere Cipher</a>
+                                <a href="#" onclick="set_cipher('autokey');">Autokey Cipher</a>
+                                <a href="#" onclick="set_cipher('morse');">Morse Code</a>
+                                <a href="#" onclick="set_cipher('binary');">Binary</a>
+
+                            </div>
+                        </div>
                     </div>
+                    <div class="column" style="width: 10%; alignment: right">
+                        <img src="assets/mic.png" id="microphone" onclick="startRecignition()" style="width: 50px; height: 50px">
+                    </div>
+
+
+
+
                 </div>
 
                 <div id="InputField">
@@ -51,8 +64,12 @@
                         <button type="button" class="block" style=" margin-top: 10px;" onclick="encode(true)" id="decodeButton">Decode</button>
                     </div>
 
-                    <textarea rows="10" class="blockText" autofocus id="encodedMessage" style="display:none; margin-bottom: 20px;  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);" readonly></textarea>
 
+                    <textarea rows="10" class="blockText" autofocus id="encodedMessage" style="display:none; margin-bottom: 20px;  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);" readonly></textarea>
+                    <label id= "morse_chk" class="container" style="margin-top: 30px; width: 300px; display: none">Play Audio (If Available)
+                        <input id= "morse_chk_btn" onclick="setTimeout(1000); morse_audio()" type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
 
                 </div>
 

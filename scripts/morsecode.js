@@ -1,5 +1,7 @@
+var synth = window.speechSynthesis;
+
 //morse code implementation
-function morsecode(plain_text, decrypt) {
+function morsecode(plain_text, decrypt, morse_audio) {
 
     //mapping alphabet to morse code
     var alphabet = {
@@ -83,6 +85,44 @@ function morsecode(plain_text, decrypt) {
 
     }
 
-    return message.join("");
+    var output = message.join("");
+
+
+
+    return output;
+}
+
+function morse_audio() {
+    var play_audio = document.getElementById("morse_chk_btn").checked;
+    var text = document.getElementById("encodedMessage").value;
+    if(play_audio){
+
+        for(var idx = 0; idx < text.length; idx++){
+
+            var letter = text[idx];
+
+            switch (letter){
+                case ".":
+                    var msg = new SpeechSynthesisUtterance("dot");
+                    synth.speak(msg);
+                    break;
+
+                case "-":
+                    var msg = new SpeechSynthesisUtterance("dash");
+                    synth.speak(msg);
+                    break;
+                case " ":
+
+                    var msg = new SpeechSynthesisUtterance("space");
+                    synth.speak(msg);
+                    break;
+            }
+        }
+    }
+    else{
+        synth.cancel();
+    }
+
+
 }
 
