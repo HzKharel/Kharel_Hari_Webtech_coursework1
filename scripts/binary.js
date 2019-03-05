@@ -1,5 +1,3 @@
-console.log(binary("hi  ", false));
-console.log(binary("1101000 1101001 100000 100000", true));
 
 function binary(plain_text, decrypt) {
     var output = [];

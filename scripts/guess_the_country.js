@@ -21,6 +21,7 @@ country_list = ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Angui
  guesses = document.getElementById("remaining_guesses");
  actual_guesses = 5;
  hidden = [];
+ guessed_letters= [];
 
  //picking a random country from the array
 function random_country() {
@@ -66,21 +67,24 @@ function new_game(){
     }
 
     //updating the webpage's DOM
-    document.getElementById("encoded_country").innerHTML = random_country_encrypted(country);
-    document.getElementById("country_decrypted").innerHTML = hidden.join("");
+    document.getElementById("encoded_country").innerHTML = "Encrypted Country: " + random_country_encrypted(country);
+    document.getElementById("country_decrypted").innerHTML = "Decrypted Letters: " + hidden.join("");
      document.getElementById("game_area").style.display = "block";
     document.getElementById("after_game").style.display = "none";
-    document.getElementById("remaining_guesses").innerHTML = ("Remaning Gusses: "+ actual_guesses);
+    document.getElementById("remaining_guesses").innerHTML = ("Remaining Guesses : "+ actual_guesses);
 }
 
 //called when the user guesses a letter
 function user_letter_guess(user_letter) {
     var correct_guess = false;
     user_letter = user_letter.toString().toLowerCase();
-    if(user_letter.length > 1){
+    if(user_letter.length !== 1){
         alert("Please Enter Only 1 Letter.");
     }
+    else if(guessed_letters.includes(user_letter)){
+        document.getElementById('guess_correct').innerHTML = "You Already Guessed That Letter. Try Something Else.";
 
+    }
     //checking if the letter matches the country's letter
     else {
         for(var i = 0; i < country.length; i++){
@@ -115,7 +119,20 @@ function user_letter_guess(user_letter) {
         }
 
         document.getElementById("remaining_guesses").innerHTML = ("Remaning Gusses: "+ actual_guesses);
+        guessed_letters.push(user_letter);
     }
 
     document.getElementById('user_letter').value = "";
+}
+
+function searchKeyPress(e)
+{
+    // look for window.event in case event isn't passed in
+    e = e || window.event;
+    if (e.keyCode === 13)
+    {
+        document.getElementById('submit_btn').click();
+        return false;
+    }
+    return true;
 }
