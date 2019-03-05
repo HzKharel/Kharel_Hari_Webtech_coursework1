@@ -69,7 +69,7 @@ function startRecignition() {
         recognition.onresult = function(event) {
             var synth = event.results[0][0].transcript;
 
-            document.getElementById("encodeField").value = previous_val + synth;
+            document.getElementById("encodeField").value = previous_val + " " + synth;
             recognition.stop();
             document.getElementById("microphone").src = "assets/mic.png";
         };
