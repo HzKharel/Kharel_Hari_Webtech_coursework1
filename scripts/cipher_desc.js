@@ -1,3 +1,6 @@
+//A class to change the description of  the ciphers according to what has been clicked
+//self explanatory
+
 function set_cipher(passed_cipher) {
     var description = document.getElementById("cipherDesc");
     var cipher = document.getElementById("dropdownSelector");

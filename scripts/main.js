@@ -1,4 +1,5 @@
-
+//Main entry point for the program
+//called by clicking the encrypt or decrypt buttons
 function encode(isDecrypt) {
     var plain_text = document.getElementById("encodeField").value;
     var key = document.getElementById("encodedMessageKey").value;
@@ -7,6 +8,7 @@ function encode(isDecrypt) {
     var cipherdesc = document.getElementById("cipherdesc");
 
 
+    //calling the right cipher depending on what was chosen
     switch (cipher) {
         case "ROT 13 Cipher":
 
@@ -32,5 +34,6 @@ function encode(isDecrypt) {
             break;
     }
 
+    //displaying the encrypted/decrypted results
     output.style.display = "block";
 }

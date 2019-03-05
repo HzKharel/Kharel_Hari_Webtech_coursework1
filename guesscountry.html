@@ -2,12 +2,13 @@
     <title>EMP</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 
-    <script type="text/javascript" src="scripts/cipher_desc.js"></script>
+    <script type="text/javascript" src="scripts/guess_the_country.js"></script>
     <script type="text/javascript" src="scripts/Rot13.js"></script>
     <script type="text/javascript" src="scripts/Autokey.js"></script>
     <script type="text/javascript" src="scripts/VignereCipher.js"></script>
     <script type="text/javascript" src="scripts/morsecode.js"></script>
-    <script type="text/javascript" src="scripts/main.js"></script>
+
+
 
 </head>
 
@@ -22,6 +23,30 @@
 </div>
 <!-- ALL CODE GOES HERE -->
 <div class="main" id="wrapper">
+    <div class="center" style="margin: auto; align-content: center">
+        <h1> Guess The Country!</h1>
+        <hr>
+        <button type = "button" class = "button" style="width: 30%" onclick="new_game()" id="start_game">Start New Game!</button>
+
+    </div>
+    <br>
+    <div id="game_area" style="display: none">
+        <h1 id="encoded_country"> Encoded! </h1>
+        <br>
+        <h1 id="remaining_guesses"> Remaining Guesses: 5</h1>
+        <br>
+        <h1 id="country_decrypted">Country!</h1>
+        <br>
+                <input type="text" id="user_letter" placeholder="Guess A Letter" style="width: 150px; height: 50px"/>
+                <button type="button" class="button" style="height: 50px" onclick="user_letter_guess(document.getElementById('user_letter').value);">Submit!</button>
+        <br>
+        <h1 id="guess_correct"></h1>
+
+    </div>
+
+    <div id="after_game" style="display: none">
+        <h1 id="win_cond">Hello!</h1>
+    </div>
 
 
 
