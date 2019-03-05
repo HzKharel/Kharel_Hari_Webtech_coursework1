@@ -32,6 +32,11 @@ function encode(isDecrypt) {
 
             output.value = morsecode(plain_text,isDecrypt);
             break;
+
+        case "Binary":
+
+            output.value = binary(plain_text,isDecrypt);
+            break;
     }
 
     //displaying the encrypted/decrypted results
