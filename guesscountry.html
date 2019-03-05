@@ -1,15 +1,11 @@
 <head>
     <title>EMP</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
-
     <script type="text/javascript" src="scripts/guess_the_country.js"></script>
     <script type="text/javascript" src="scripts/Rot13.js"></script>
     <script type="text/javascript" src="scripts/Autokey.js"></script>
     <script type="text/javascript" src="scripts/VignereCipher.js"></script>
     <script type="text/javascript" src="scripts/morsecode.js"></script>
-
-
-
 </head>
 
 <body>
@@ -39,20 +35,22 @@
         <br>
         <h1 id="country_decrypted"></h1>
         <br>
-                <input type="text" id="user_letter" placeholder="Guess A Letter" style="width: 150px; height: 50px"/>
-                <button type="button" id="submit_btn" class="button" style="height: 50px; box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);" onclick="user_letter_guess(document.getElementById('user_letter').value);">Submit!</button>
-        <br>
-        <h1 id="guess_correct"></h1>
+        <div id="game_buttons">
+            <input type="text" id="user_letter" placeholder="Guess A Letter" style="width: 150px; height: 50px; text-align: center;"/>
+            <button type="button" id="submit_btn" class="button" style="height: 50px; box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);" onclick="user_letter_guess(document.getElementById('user_letter').value);">Submit!</button>
 
+        </div>
+         <br>
+        <h1 id="guess_correct"></h1>
     </div>
 
     <div id="after_game" style="display: none">
         <br>
         <h1 id="cont"></h1>
         <br>
-        <br>
-        <h1 id="win_cond">Hello!</h1>
     </div>
+
+
 
 
 

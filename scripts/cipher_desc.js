@@ -48,6 +48,13 @@ function set_cipher(passed_cipher) {
                 "\n" +
                 "Adapted from Wikipedia.\n";
             break;
+        case 'binary':
+            cipher.innerText  = "Binary";
+            description.innerText= "In mathematics and digital electronics, a binary number is a number expressed in the base-2 numeral system or binary numeral system, which uses only two symbols: typically \"0\" (zero) and \"1\" (one).\n" +
+                "The base-2 numeral system is a positional notation with a radix of 2. Each digit is referred to as a bit. Because of its straightforward implementation in digital electronic circuitry using logic gates, the binary system is used by almost all modern computers and computer-based devices.\n" +
+                "\n" +
+                "Adapted from Wikipedia.\n";
+            break;
     }
 
 }
