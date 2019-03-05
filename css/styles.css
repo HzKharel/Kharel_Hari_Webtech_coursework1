@@ -72,6 +72,15 @@ div.content {
     div.content {
         margin-left: 0;
     }
+    div.content {
+        margin-left: 0;
+    }
+    .main {
+        margin-left: 0;
+    }
+    .column {
+        width: 100%;
+    }
 
 }
 
@@ -131,6 +140,7 @@ h1 {
     padding: 0;
     resize: none;
     margin-top: 10px;
+    margin-bottom: 30px;
 
 
 
