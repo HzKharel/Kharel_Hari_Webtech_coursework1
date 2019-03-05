@@ -13,6 +13,7 @@ function set_cipher(passed_cipher) {
             description.innerText = "ROT 13, also known as 'Rotate by 13 Places is a simple letter substitution cipher that replace a letter with the 13th letter after it. ROT 13 is a special adaptation of Caesar cipher, developed in ancient Rome. \n\n" +
                 "Because there are 26 letters in the basic Latin alphabet, ROT13 is its own inverse; that is, to undo ROT13, the same algorithm is applied, so the same action can be used for encoding and decoding. The algorithm provides virtually no cryptographic security and is often cited as a canonical example of weak encryption. \n\n " +
                 "ROT13 is used in online forums as a means of hiding spoilers, punchlines, puzzle solutions, and offensive materials from the casual glance. ROT13 has inspired a variety of letter and word games on-line, and is frequently mentioned in newsgroup conversations. \n\n " +
+                "\n Hint: Enter a number in the key field and the cipher will rotate by that value. \n"+
                 "Adapted from Wikipedia.";
             break;
 
