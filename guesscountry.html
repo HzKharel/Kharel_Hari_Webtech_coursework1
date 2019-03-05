@@ -26,7 +26,7 @@
     <div class="center" style="margin: auto; align-content: center">
         <h1> Guess The Country!</h1>
         <hr>
-        <button type = "button" class = "button" style="width: 30%" onclick="new_game()" id="start_game">Start New Game!</button>
+        <button type = "button" class = "button" style="width: 300px; box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);" onclick="new_game()" id="start_game">Start New Game!</button>
 
     </div>
     <br>
@@ -37,15 +37,15 @@
         <br>
         <h1 id="country_decrypted">Country!</h1>
         <br>
-                <input type="text" id="user_letter" placeholder="Guess A Letter" style="width: 150px; height: 50px"/>
-                <button type="button" class="button" style="height: 50px" onclick="user_letter_guess(document.getElementById('user_letter').value);">Submit!</button>
+                <input type="text" id="user_letter" placeholder="Guess A Letter" style="width: 150px; height: 50px;"/>
+                <button type="button" class="button" style="height: 50px; box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);" onclick="user_letter_guess(document.getElementById('user_letter').value);">Submit!</button>
         <br>
         <h1 id="guess_correct"></h1>
 
     </div>
 
     <div id="after_game" style="display: none">
-        <h1 id="win_cond">Hello!</h1>
+        <h1 id="win_cond"></h1>
     </div>
 
 

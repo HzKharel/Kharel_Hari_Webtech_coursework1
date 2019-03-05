@@ -28,7 +28,7 @@
             <div class="column">
 
                 <div class="dropdown">
-                    <button class="dropbtn" id="dropdownSelector">Select Encoder</button>
+                    <button class="dropbtn"  style = "box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);" id="dropdownSelector">Select Encoder</button>
                     <div class="dropdown-content">
 
                         <a href="#" onclick="set_cipher('rot13');">ROT 13</a>
@@ -40,16 +40,15 @@
                 </div>
 
                 <div id="InputField">
-                    <textarea rows="10" class="blockText" autofocus id="encodeField"></textarea>
+                    <textarea rows="10" class="blockText"  style = "box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);" autofocus id="encodeField"></textarea>
                     <br>
-                    <input type="text"class="blockText" style="margin-bottom: 10px; fo" autofocus id="encodedMessageKey" maxlength="100"Cipher Key (if applicable)"></textarea>
+                    <input type="text"class="blockText" style="margin-bottom: 10px;" autofocus id="encodedMessageKey" maxlength="100"Cipher Key (if applicable)"></textarea>
 
                     <div class="btn-group">
-                        <button type="button" style=" margin-top: 10px; margin-right: 2%" class="block" onclick="encode(false)" id="encodeButton">Encode</button>
-                        <button type="button" class="block" style=" margin-top: 10px;" onclick="encode(true)" id="decodeButton">Decode</button>
+                        <button type="button" style=" margin-top: 10px; margin-right: 2%; box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);" class="block" onclick="encode(false)" id="encodeButton">Encode</button>
+                        <button type="button" class="block" style=" margin-top: 10px; box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);;" onclick="encode(true)" id="decodeButton">Decode</button>
                     </div>
 
-                    <textarea rows="10" class="blockText" autofocus id="encodedMessage" style="display:none; margin-bottom: 20px" readonly></textarea>
                     <textarea rows="10" class="blockText" autofocus id="encodedMessage" style="display:none; margin-bottom: 20px" readonly></textarea>
 
                 </div>
