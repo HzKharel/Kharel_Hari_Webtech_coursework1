@@ -17,7 +17,7 @@
    - Cipher Implementation
    - Game Implementation
 - Critical Evaluation
-- Personal Evaluation.......................................................................................................................................
+- Personal Evaluation
 - References
 
 
