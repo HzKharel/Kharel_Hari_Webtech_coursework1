@@ -116,6 +116,8 @@ function morse_audio() {
                     var msg = new SpeechSynthesisUtterance("space");
                     synth.speak(msg);
                     break;
+                default:
+                    synth.cancel();
             }
         }
     }
