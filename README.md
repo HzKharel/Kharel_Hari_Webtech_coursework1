@@ -5,21 +5,6 @@
 #### COURSEWORK 1 – DESIGNING A WEBSITE WHICH ENCODES AND DECODES CIPHERS
 
 
-## Contents
-
-- Introduction
-   - Overview
-   - Choice of Ciphers
-- SOFTWARE DESIGN
-   - Cipher Page Design
-   - Game Page Design
-- Implementation
-   - Cipher Implementation
-   - Game Implementation
-- Critical Evaluation
-- Personal Evaluation
-- References
-
 
 ## Introduction
 
@@ -127,7 +112,7 @@ make the webpage scale better for mobile as well as optimize the layout. A leade
 implemented for the game as an extension, making use of Node.js. Finally, another feature that could be
 implemented would be saving previously encrypted/decrypted messages using page cookies.
 
-## Personal Evaluation.......................................................................................................................................
+## Personal Evaluation
 
 Undertaking such project increased my knowledge of how the web works and how to build production,
 finished apps. This project gave me an opportunity to use version control system to keep track of my
