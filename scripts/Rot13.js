@@ -1,10 +1,5 @@
 //ROT 13 implementation
-function rot13(plain_text, key) {
-
-    var rotate =  13;
-    if(Number.isInteger(key) === true){
-        rotate = key % 26;
-    }
+function rot13(plain_text) {
     var output = "";
     //going through each letter in the plain text
     for (var idx = 0; idx < plain_text.length; idx++) {
@@ -18,12 +13,12 @@ function rot13(plain_text, key) {
 
             // uppercase letters
             if (plain_text[idx] === plain_text[idx].toUpperCase()) {
-                crypt_letter = String.fromCharCode(((crypt_letter_code + rotate - 65) % 26) + 65);
+                crypt_letter = String.fromCharCode(((crypt_letter_code + 13 - 65) % 26) + 65);
                 output += crypt_letter;
             }
             //handling lower case letters
             else {
-                crypt_letter = String.fromCharCode(((crypt_letter_code + rotate - 97) % 26) + 97);
+                crypt_letter = String.fromCharCode(((crypt_letter_code + 13 - 97) % 26) + 97);
                 output += crypt_letter;
             }
         }

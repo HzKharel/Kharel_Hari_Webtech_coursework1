@@ -14,9 +14,10 @@ function encode(isDecrypt) {
 
     //calling the right cipher depending on what was chosen
     switch (cipher) {
-        case "ROT N Cipher":
+        case "ROT 13 Cipher":
 
-            output.value = rot13(plain_text, key);
+            alert(rot13(plain_text));
+            output.value = rot13(plain_text);
 
 
             break;
